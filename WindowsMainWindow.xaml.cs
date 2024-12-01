@@ -41,7 +41,8 @@ namespace YA_Metro.Windows
         /// </summary>
         public MainWindow()
         {
-            this._metro = Metro.Create((IRepository)new JsonRepository(Path.GetFullPath("Resources\\yar")));
+            string resourcePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..\\..\\Resources\\yar");
+            this._metro = Metro.Create((IRepository)new JsonRepository(Path.GetFullPath(resourcePath)));
             this._modeling = new Modeling();
             this._modeling.TrainPositionUpdated += new Modeling.UpdateTrainsPositionHandler(this.Modeling_TrainPositionUpdated);
             this._modeling.ModelingEnded += new Modeling.EndedModeligHangler(this.Modeling_ModelingEnded);
