@@ -1,0 +1,240 @@
+<Window x:Class="YA_Metro.Windows.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
+        xmlns:userControl="clr-namespace:YA_Metro.UI.DateRangeSlider"
+        Closing="Window_Closing" Title="Настройки моделирования" Height="450" Width="600"
+        WindowStyle="ToolWindow" ResizeMode="NoResize" WindowStartupLocation="CenterScreen"
+        Icon="/YA_Metro;component/logo.ico">
+    <FrameworkElement.Resources>
+        <Style x:Key="InfoLabelStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Background" Value="#F8B226"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="Margin" Value="5,5,5,0"/>
+        </Style>
+        <Style x:Key="DayButtonStyle" TargetType="Button">
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="Gray"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="Margin" Value="5,5,0,0"/>
+            <Setter Property="Width" Value="40"/>
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="5">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"
+                                          RecognizesAccessKey="True"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#F8B226"/>
+                                <Setter Property="BorderBrush" Value="#F8B226"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#F8B226"/>
+                                <Setter Property="BorderBrush" Value="#F8B226"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Background" Value="#F8B226"/>
+                                <Setter Property="BorderBrush" Value="Gray"/>
+                                <Setter Property="Foreground" Value="Black"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="InfoListViewStyle" TargetType="ListView">
+            <Setter Property="Background" Value="LightGray"/>
+            <Setter Property="BorderBrush" Value="Gray"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+        </Style>
+        <Style x:Key="InfoSliderStyle" TargetType="Slider">
+            <Setter Property="Background" Value="LightGray"/>
+            <Setter Property="BorderBrush" Value="Gray"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Margin" Value="10,5,0,0"/>
+        </Style>
+        <Style x:Key="InfoTextBlockStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="DarkBlue"/>
+            <Setter Property="Margin" Value="10,5,0,0"/>
+        </Style>
+        <Style x:Key="DeleteTrainButtonStyle" TargetType="Button">
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Background" Value="LightGray"/>
+            <Setter Property="BorderBrush" Value="Gray"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="Margin" Value="5,5,0,0"/>
+            <Setter Property="Width" Value="90"/>
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="5">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"
+                                              RecognizesAccessKey="True"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="LightCoral"/>
+                                <Setter Property="BorderBrush" Value="LightCoral"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="LightCoral"/>
+                                <Setter Property="BorderBrush" Value="LightCoral"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Background" Value="LightGray"/>
+                                <Setter Property="BorderBrush" Value="Gray"/>
+                                <Setter Property="Foreground" Value="Black"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </FrameworkElement.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="330"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="0" Margin="5, 5, 5, 0">
+            <Label Content="Период моделирования" Style="{StaticResource InfoLabelStyle}"/>
+            <StackPanel Name="DoWPanel" Orientation="Horizontal">
+                <Button Click="DayButton_Click" Content="Пн" Style="{StaticResource DayButtonStyle}">
+                    <FrameworkElement.Tag>
+                        <system:DayOfWeek>1</system:DayOfWeek>
+                    </FrameworkElement.Tag>
+                </Button>
+                <Button Click="DayButton_Click" Content="Вт" Style="{StaticResource DayButtonStyle}">
+                    <FrameworkElement.Tag>
+                        <system:DayOfWeek>2</system:DayOfWeek>
+                    </FrameworkElement.Tag>
+                </Button>
+                <Button Click="DayButton_Click" Content="Ср" Style="{StaticResource DayButtonStyle}">
+                    <FrameworkElement.Tag>
+                        <system:DayOfWeek>3</system:DayOfWeek>
+                    </FrameworkElement.Tag>
+                </Button>
+                <Button Click="DayButton_Click" Content="Чт" Style="{StaticResource DayButtonStyle}">
+                    <FrameworkElement.Tag>
+                        <system:DayOfWeek>4</system:DayOfWeek>
+                    </FrameworkElement.Tag>
+                </Button>
+                <Button Click="DayButton_Click" Content="Пт" Style="{StaticResource DayButtonStyle}">
+                    <FrameworkElement.Tag>
+                        <system:DayOfWeek>5</system:DayOfWeek>
+                    </FrameworkElement.Tag>
+                </Button>
+                <Button Click="DayButton_Click" Content="Сб" Style="{StaticResource DayButtonStyle}">
+                    <FrameworkElement.Tag>
+                        <system:DayOfWeek>6</system:DayOfWeek>
+                    </FrameworkElement.Tag>
+                </Button>
+                <Button Click="DayButton_Click" Content="Вс" Style="{StaticResource DayButtonStyle}">
+                    <FrameworkElement.Tag>
+                        <system:DayOfWeek>0</system:DayOfWeek>
+                    </FrameworkElement.Tag>
+                </Button>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Margin="0,10,0,0">
+                <userControl:DateRangeSlider x:Name="PeriodRangeSlider" MinRange="30"/>
+                <TextBlock FontSize="13" Style="{StaticResource InfoTextBlockStyle}">
+                <Run Text="Время моделирования: "/>
+                <Run Foreground="#169bd5" FontWeight="Medium"
+                     Text="{Binding ElementName=PeriodRangeSlider, Path=StrLowerValue, Mode=OneWay}"/>
+                <Run Text="-" Foreground="#169bd5" FontWeight="Medium"/>
+                <Run Foreground="#169bd5" FontWeight="Medium"
+                     Text="{Binding ElementName=PeriodRangeSlider, Path=StrUpperValue, Mode=OneWay}"/>
+                </TextBlock>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="1" Margin="5, 5, 5, 0">
+            <Label Content="Шаг моделирования" Style="{StaticResource InfoLabelStyle}"/>
+            <Slider Name="StepSlider" Style="{StaticResource InfoSliderStyle}" Minimum="30" Maximum="120" SmallChange="1"
+                LargeChange="5"/>
+            <TextBlock Style="{StaticResource InfoTextBlockStyle}">
+            <Run Text="Значение: "/>
+            <Run Text="{Binding ElementName=StepSlider, Path=Value, Mode=OneWay}"/>
+            </TextBlock>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+            <Label Content="Поезда" Style="{StaticResource InfoLabelStyle}"/>
+            <Button Click="DeleteTrain_Click" Name="DeleteTrain" Content="Удалить поезд" Margin="140,-24,10,0"
+                Height="21" Width="90" IsEnabled="false" HorizontalAlignment="Right" Style="{StaticResource DeleteTrainButtonStyle}"/>
+            <StackPanel Orientation="Horizontal">
+                <ListView SelectionChanged="TrainsList_SelectionChanged" Name="TrainsList" Style="{StaticResource InfoListViewStyle}" Height="130"
+                      Width="300" SelectionMode="Single">
+                    <ListView.View>
+                        <GridView>
+                            <GridView.Columns>
+                                <GridViewColumn Header="Номер" Width="70" DisplayMemberBinding="{Binding Path=Id}"/>
+                                <GridViewColumn Header="Начальная станция" Width="200" DisplayMemberBinding="{Binding Path=StartStation.Name}"/>
+                            </GridView.Columns>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <StackPanel Orientation="Vertical" Width="275">
+                    <Label Content="Добавление поезда" Style="{StaticResource InfoLabelStyle}"/>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="Номер" Grid.Row="0" Grid.Column="0"/>
+                        <TextBox PreviewTextInput="NumText_PreviewTextInput" Name="NumText" Width="47" Height="20" MaxLength="5" Grid.Row="0"
+                             Grid.Column="0"/>
+                        <Label Content="Начальная станция" Grid.Row="1" Grid.Column="0"/>
+                        <StackPanel Name="StationSelector" Orientation="Horizontal" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
+                            <Button Click="StationButton_Click" Name="StartStation" Content="Станция1" Width="100" Style="{StaticResource DayButtonStyle}"/>
+                            <Button Click="StationButton_Click" Name="FinishStation" Content="Станция2" Width="100" Style="{StaticResource DayButtonStyle}"/>
+                        </StackPanel>
+                        <Button Click="AddTrain_Click" Name="AddTrain" Content="Добавить поезд" Margin="0,10,0,0" Width="115"
+                            HorizontalAlignment="Center" Grid.Row="3" Grid.Column="1" Style="{StaticResource DayButtonStyle}"/>
+                    </Grid>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

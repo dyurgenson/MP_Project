@@ -1,0 +1,405 @@
+[
+    {
+        "id": 1,
+        "name": "Чурилково",
+        "state": 0,
+        "coord": [200, 60],
+        "coords_of_name": 0
+    }, {
+        "id": 2,
+        "name": "Карачиха",
+        "state": 0,
+        "coord": [200, 100],
+        "coords_of_name": 0
+    }, {
+        "id": 3,
+        "name": "Локомотивная",
+        "state": 0,
+        "coord": [200, 140],
+        "coords_of_name": 0
+    }, {
+        "id": 4,
+        "name": "Лодочная",
+        "state": 0,
+        "coord": [200, 180],
+        "coords_of_name": 0
+    }, {
+        "id": 5,
+        "name": "Магистральная",
+        "state": 0,
+        "coord": [200, 220],
+        "coords_of_name": 0
+    }, {
+        "id": 6,
+        "name": "Привокзальная",
+        "state": 0,
+        "coord": [200, 260],
+        "coords_of_name": 0
+    }, {
+        "id": 7,
+        "name": "Городской Вал",
+        "state": 0,
+        "coord": [250, 330],
+        "coords_of_name": 0
+    }, {
+        "id": 8,
+        "name": "Вознесенская",
+        "state": 0,
+        "coord": [300, 380],
+        "coords_of_name": 0
+    }, {
+        "id": 9,
+        "name": "Красная Площадь",
+        "state": 0,
+        "coord": [350, 430],
+        "coords_of_name": 0
+    }, {
+        "id": 10,
+        "name": "Волжская",
+        "state": 0,
+        "coord": [450, 480],
+        "coords_of_name": 0
+    }, {
+        "id": 11,
+        "name": "Холодмаш",
+        "state": 0,
+        "coord": [300, 60],
+        "coords_of_name": 0
+    }, {
+        "id": 12,
+        "name": "Брагино",
+        "state": 0,
+        "coord": [300, 100],
+        "coords_of_name": 0
+    }, {
+        "id": 13,
+        "name": "Осташкинская",
+        "state": 0,
+        "coord": [300, 140],
+        "coords_of_name": 0
+    }, {
+        "id": 14,
+        "name": "Промышленная",
+        "state": 0,
+        "coord": [340, 180],
+        "coords_of_name": 0
+    }, {
+        "id": 15,
+        "name": "Добрынинская",
+        "state": 0,
+        "coord": [340, 200],
+        "coords_of_name": 0
+    }, {
+        "id": 16,
+        "name": "Юбилейная",
+        "state": 0,
+        "coord": [340, 260],
+        "coords_of_name": 0
+    }, {
+        "id": 17,
+        "name": "Волковская",
+        "state": 0,
+        "coord": [350, 430],
+        "coords_of_name": 0
+    }, {
+        "id": 18,
+        "name": "Богоявленская",
+        "state": 0,
+        "coord": [350, 470],
+        "coords_of_name": 0
+    }, {
+        "id": 19,
+        "name": "Тугова Гора",
+        "state": 0,
+        "coord": [450, 610],
+        "coords_of_name": 0
+    }, {
+        "id": 20,
+        "name": "Сокол",
+        "state": 0,
+        "coord": [450, 650],
+        "coords_of_name": 0
+    }, {
+        "id": 21,
+        "name": "Судостроительная",
+        "state": 0,
+        "coord": [450, 670],
+        "coords_of_name": 0
+    }, {
+        "id": 22,
+        "name": "Липовая Гора",
+        "state": 0,
+        "coord": [450, 700],
+        "coords_of_name": 0
+    }, {
+        "id": 23,
+        "name": "Волгоградская",
+        "state": 0,
+        "coord": [400, 20],
+        "coords_of_name": 0
+    }, {
+        "id": 24,
+        "name": "Ленинградский проспект",
+        "state": 0,
+        "coord": [400, 60],
+        "coords_of_name": 0
+    }, {
+        "id": 25,
+        "name": "Велотрек",
+        "state": 0,
+        "coord": [400, 100],
+        "coords_of_name": 0
+    }, {
+        "id": 26,
+        "name": "Тутаевская",
+        "state": 0,
+        "coord": [450, 140],
+        "coords_of_name": 0
+    }, {
+        "id": 27,
+        "name": "Промышленная",
+        "state": 0,
+        "coord": [360, 180],
+        "coords_of_name": 0
+    }, {
+        "id": 28,
+        "name": "Проспект Маршала Толбухина",
+        "state": 0,
+        "coord": [340, 260],
+        "coords_of_name": 0
+    }, {
+        "id": 29,
+        "name": "Площадь Труда",
+        "state": 0,
+        "coord": [300, 380],
+        "coords_of_name": 0
+    }, {
+        "id": 30,
+        "name": "Парк Тысячелетия",
+        "state": 0,
+        "coord": [300, 420],
+        "coords_of_name": 0
+    }, {
+        "id": 31,
+        "name": "Фёдоровская",
+        "state": 0,
+        "coord": [300, 460],
+        "coords_of_name": 0
+    }, {
+        "id": 32,
+        "name": "Московская",
+        "state": 0,
+        "coord": [300, 500],
+        "coords_of_name": 0
+    }, {
+        "id": 33,
+        "name": "Силикатная",
+        "state": 0,
+        "coord": [300, 610],
+        "coords_of_name": 0
+    }, {
+        "id": 34,
+        "name": "Арена 2000",
+        "state": 0,
+        "coord": [300, 640],
+        "coords_of_name": 0
+    }, {
+        "id": 35,
+        "name": "Парк НПЗ",
+        "state": 0,
+        "coord": [300, 670],
+        "coords_of_name": 0
+    }, {
+        "id": 36,
+        "name": "Кресты",
+        "state": 0,
+        "coord": [300, 700],
+        "coords_of_name": 0
+    }, {
+        "id": 37,
+        "name": "Норская",
+        "state": 0,
+        "coord": [500, 20],
+        "coords_of_name": 0
+    }, {
+        "id": 38,
+        "name": "Скобыкино",
+        "state": 0,
+        "coord": [500, 60],
+        "coords_of_name": 0
+    }, {
+        "id": 39,
+        "name": "Павловская Роща",
+        "state": 0,
+        "coord": [500, 100],
+        "coords_of_name": 0
+    }, {
+        "id": 40,
+        "name": "Парижская коммуна",
+        "state": 0,
+        "coord": [450, 140],
+        "coords_of_name": 0
+    }, {
+        "id": 41,
+        "name": "Проспект Ленина",
+        "state": 0,
+        "coord": [450, 260],
+        "coords_of_name": 0
+    }, {
+        "id": 42,
+        "name": "Флотская",
+        "state": 0,
+        "coord": [450, 480],
+        "coords_of_name": 0
+    }, {
+        "id": 43,
+        "name": "Арсенальная",
+        "state": 0,
+        "coord": [450, 510],
+        "coords_of_name": 0
+    }, {
+        "id": 44,
+        "name": "Нижний посёлок",
+        "state": 0,
+        "coord": [750, 700],
+        "coords_of_name": 0
+    }, {
+        "id": 45,
+        "name": "Университетская",
+        "state": 0,
+        "coord": [750, 670],
+        "coords_of_name": 0
+    }, {
+        "id": 46,
+        "name": "Красный Бор",
+        "state": 0,
+        "coord": [750, 640],
+        "coords_of_name": 0
+    }, {
+        "id": 47,
+        "name": "Проспект Машиностроителей",
+        "state": 0,
+        "coord": [750, 610],
+        "coords_of_name": 0
+    }, {
+        "id": 48,
+        "name": "Филино",
+        "state": 0,
+        "coord": [750, 580],
+        "coords_of_name": 0
+    }, {
+        "id": 49,
+        "name": "Пролетарская",
+        "state": 0,
+        "coord": [750, 550],
+        "coords_of_name": 0
+    }, {
+        "id": 50,
+        "name": "Заволжская",
+        "state": 0,
+        "coord": [600, 260],
+        "coords_of_name": 0
+    }, {
+        "id": 51,
+        "name": "Полушкина Роща",
+        "state": 0,
+        "coord": [450, 260],
+        "coords_of_name": 0
+    }, {
+        "id": 52,
+        "name": "Моторозаводская",
+        "state": 0,
+        "coord": [340, 260],
+        "coords_of_name": 0
+    }, {
+        "id": 53,
+        "name": "Привокзальная",
+        "state": 0,
+        "coord": [200, 260],
+        "coords_of_name": 0
+    }, {
+        "id": 54,
+        "name": "Вспольинское Поле",
+        "state": 0,
+        "coord": [200, 300],
+        "coords_of_name": 0
+    }, {
+        "id": 55,
+        "name": "Комсомольская",
+        "state": 0,
+        "coord": [200, 460],
+        "coords_of_name": 0
+    }, {
+        "id": 56,
+        "name": "Красный Перекоп",
+        "state": 0,
+        "coord": [200, 500],
+        "coords_of_name": 0
+    }, {
+        "id": 57,
+        "name": "Починки",
+        "state": 0,
+        "coord": [200, 610],
+        "coords_of_name": 0
+    }, {
+        "id": 58,
+        "name": "Ивняки",
+        "state": 0,
+        "coord": [200, 640],
+        "coords_of_name": 0
+    }, {
+        "id": 59,
+        "name": "Резинотехника",
+        "state": 0,
+        "coord": [600, 60],
+        "coords_of_name": 0
+    }, {
+        "id": 60,
+        "name": "Скобыкино",
+        "state": 0,
+        "coord": [500, 60],
+        "coords_of_name": 0
+    }, {
+        "id": 61,
+        "name": "Холодмаш",
+        "state": 0,
+        "coord": [300, 60],
+        "coords_of_name": 0
+    }, {
+        "id": 62,
+        "name": "Угличская",
+        "state": 0,
+        "coord": [200, 100],
+        "coords_of_name": 0
+    }, {
+        "id": 63,
+        "name": "Творогово",
+        "state": 0,
+        "coord": [200, 640],
+        "coords_of_name": 0
+    }, {
+        "id": 64,
+        "name": "Калининская",
+        "state": 0,
+        "coord": [300, 700],
+        "coords_of_name": 0
+    }, {
+        "id": 65,
+        "name": "Пожарская",
+        "state": 0,
+        "coord": [350, 685],
+        "coords_of_name": 0
+    }, {
+        "id": 66,
+        "name": "Фрунзенская",
+        "state": 0,
+        "coord": [450, 670],
+        "coords_of_name": 0
+    }, {
+        "id": 67,
+        "name": "Вакарево",
+        "state": 0,
+        "coord": [600, 600],
+        "coords_of_name": 0
+    }
+]

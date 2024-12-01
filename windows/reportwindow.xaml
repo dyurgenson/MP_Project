@@ -1,0 +1,78 @@
+<Window x:Class="YA_Metro.Windows.ReportWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:YA_Metro.Windows"
+        Title="Итоги моделирования" Height="550" Width="610" Icon="/YA_Metro;component/logo.ico"
+        WindowStartupLocation="CenterOwner" ResizeMode="NoResize">
+    <FrameworkElement.Resources>
+        <Style x:Key="InfoTextBlockStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="DarkBlue"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+        <Style x:Key="InfoListViewStyle" TargetType="ListView">
+            <Setter Property="Background" Value="LightGray"/>
+            <Setter Property="BorderBrush" Value="Gray"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+        </Style>
+        <Style x:Key="InfoRichTextBoxStyle" TargetType="RichTextBox">
+            <Setter Property="Background" Value="LightGray"/>
+            <Setter Property="BorderBrush" Value="Gray"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+            <Setter Property="IsReadOnly" Value="True"/>
+        </Style>
+    </FrameworkElement.Resources>
+    <StackPanel Orientation="Vertical" Margin="10">
+        <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Vertical" Width="280">
+                <TextBlock Style="{StaticResource InfoTextBlockStyle}">
+                <Run Text="Ветка: "/>
+                <Run x:Name="BranchNameTxt"/>
+                </TextBlock>
+                <TextBlock Style="{StaticResource InfoTextBlockStyle}">
+                <Run Text="День недели: "/>
+                <Run x:Name="DayOfWeekTxt"/>
+                </TextBlock>
+                <TextBlock Style="{StaticResource InfoTextBlockStyle}">
+                <Run Text="Время начала:"/>
+                <Run x:Name="StartTimeTxt"/>
+                </TextBlock>
+                <TextBlock Style="{StaticResource InfoTextBlockStyle}">
+                <Run Text="Время окончания:"/>
+                <Run x:Name="FinishTimeTxt"/>
+                </TextBlock>
+                <TextBlock Style="{StaticResource InfoTextBlockStyle}">
+                <Run Text="Шаг моделирования:"/>
+                <Run x:Name="StepTxt"/>
+                </TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Width="300">
+                <TextBlock Style="{StaticResource InfoTextBlockStyle}">
+                <Run Text="Количество поездов:"/>
+                <Run x:Name="CountTrainsTxt"/>
+                </TextBlock>
+                <ListView Name="TrainsList" Style="{StaticResource InfoListViewStyle}" Height="130" SelectionMode="Single">
+                    <ListView.View>
+                        <GridView>
+                            <GridView.Columns>
+                                <GridViewColumn Header="Номер" Width="70" DisplayMemberBinding="{Binding Path=Id}"/>
+                                <GridViewColumn Header="Начальная станция" Width="200" DisplayMemberBinding="{Binding Path=StartStation.Name}"/>
+                            </GridView.Columns>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Orientation="Vertical">
+            <TextBlock Text="Лог действий:" Style="{StaticResource InfoTextBlockStyle}"/>
+            <RichTextBox Name="LogsRtb" Style="{StaticResource InfoRichTextBoxStyle}" Height="270"/>
+        </StackPanel>
+    </StackPanel>
+</Window>
