@@ -304,19 +304,19 @@
         "name": "Полушкина Роща",
         "state": 0,
         "coord": [450, 260],
-        "coords_of_name": 0
+        "coords_of_name": 1
     }, {
         "id": 52,
         "name": "Моторозаводская",
         "state": 0,
         "coord": [340, 260],
-        "coords_of_name": 0
+        "coords_of_name": 3
     }, {
         "id": 53,
         "name": "Привокзальная",
         "state": 0,
         "coord": [200, 260],
-        "coords_of_name": 0
+        "coords_of_name": 1
     }, {
         "id": 54,
         "name": "Вспольинское Поле",
@@ -358,37 +358,37 @@
         "name": "Скобыкино",
         "state": 0,
         "coord": [500, 60],
-        "coords_of_name": 0
+        "coords_of_name": 3
     }, {
         "id": 61,
         "name": "Холодмаш",
         "state": 0,
         "coord": [300, 60],
-        "coords_of_name": 0
+        "coords_of_name": 1
     }, {
         "id": 62,
         "name": "Угличская",
         "state": 0,
         "coord": [200, 100],
-        "coords_of_name": 0
+        "coords_of_name": 2
     }, {
         "id": 63,
         "name": "Творогово",
         "state": 0,
         "coord": [200, 640],
-        "coords_of_name": 0
+        "coords_of_name": 2
     }, {
         "id": 64,
         "name": "Калининская",
         "state": 0,
         "coord": [300, 700],
-        "coords_of_name": 0
+        "coords_of_name": 3
     }, {
         "id": 65,
         "name": "Пожарская",
         "state": 0,
         "coord": [350, 685],
-        "coords_of_name": 0
+        "coords_of_name": 1
     }, {
         "id": 66,
         "name": "Фрунзенская",
