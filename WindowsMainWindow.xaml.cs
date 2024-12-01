@@ -56,10 +56,18 @@ namespace YA_Metro.Windows
         /// </summary>
         private void Modeling_ModelingEnded()
         {
-            this._glControl.Invalidate();
-            if (System.Windows.Forms.MessageBox.Show("Показать отчет?", "Логичный вопрос", MessageBoxButtons.YesNo) != System.Windows.Forms.DialogResult.Yes)
-                return;
-            new ReportWindow(this._modeling.GetReport()).ShowDialog();
+            this.Dispatcher.Invoke(() =>
+            {
+                this._glControl.Invalidate();
+                if (System.Windows.Forms.MessageBox.Show("Показать отчет?", "Логичный вопрос", MessageBoxButtons.YesNo) != System.Windows.Forms.DialogResult.Yes)
+                    return;
+                new ReportWindow(this._modeling.GetReport()).ShowDialog();
+                this.StartButton.Visibility = Visibility.Visible;
+                this.ResumeButton.Visibility = Visibility.Collapsed;
+                this.SettingsButton.Visibility = Visibility.Visible;
+                this.PauseButton.Visibility = Visibility.Collapsed;
+                this.StopButton.Visibility = Visibility.Collapsed;
+            });
         }
 
         /// <summary>
@@ -433,11 +441,6 @@ namespace YA_Metro.Windows
         private void BtnStop_Click(object sender, RoutedEventArgs e)
         {
             this._modeling.Stop();
-            this.StartButton.Visibility = Visibility.Visible;
-            this.ResumeButton.Visibility = Visibility.Collapsed;
-            this.SettingsButton.Visibility = Visibility.Visible;
-            this.PauseButton.Visibility = Visibility.Collapsed;
-            this.StopButton.Visibility = Visibility.Collapsed;
         }
 
         /// <summary>
