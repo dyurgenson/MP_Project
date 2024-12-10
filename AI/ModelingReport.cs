@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using YA_Metro.Models;
 using YA_Metro.Utilities.Logger;
 
@@ -70,7 +72,43 @@ namespace YA_Metro.AI
         /// <param name="fileName">Имя файла для сохранения.</param>
         public void SaveAsTxt(string fileName)
         {
-            // Реализация сохранения отчета в формате TXT.
+            using(StreamWriter sw = new StreamWriter(fileName))
+            {
+                sw.WriteLine(Branch.Name);
+                switch (DayOfWeek)
+                {
+                    case DayOfWeek.Sunday:
+                        sw.WriteLine("Воскресенье");
+                        break;
+                    case DayOfWeek.Monday:
+                        sw.WriteLine("Понедельник");
+                        break;
+                    case DayOfWeek.Tuesday:
+                        sw.WriteLine("Вторник");
+                        break;
+                    case DayOfWeek.Wednesday:
+                        sw.WriteLine("Среда");
+                        break;
+                    case DayOfWeek.Thursday:
+                        sw.WriteLine("Четверг");
+                        break;
+                    case DayOfWeek.Friday:
+                        sw.WriteLine("Пятница");
+                        break;
+                    case DayOfWeek.Saturday:
+                        sw.WriteLine("Суббота");
+                        break;
+                    default:
+                        sw.WriteLine("");
+                        break;
+                }
+                sw.WriteLine(StartTime.ToString("HH:mm"));
+                sw.WriteLine(FinishTime.ToString("HH:mm"));
+                sw.WriteLine(Step.ToString());
+                sw.WriteLine(Trains.Count<Train>().ToString());
+                foreach (LogEntry logEntry in this.LogEntries)
+                    sw.WriteLine(logEntry.ToString("HH:mm:ss") + "\r");
+            }
         }
     }
 }
