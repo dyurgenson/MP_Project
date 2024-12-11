@@ -320,7 +320,7 @@ namespace YA_Metro.Windows
         {
             foreach (Train train in trains)
             {
-                GL.Color4(train.Direction == TrainDirection.Direct ? Color4.Pink : Color4.Blue);
+                GL.Color4(train.Direction == TrainDirection.Direct ? Color4.Pink : Color4.Orange);
                 PointD coord = train.Coord;
                 double x = coord.X;
                 coord = train.Coord;
