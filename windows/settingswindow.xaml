@@ -190,7 +190,7 @@
                 LargeChange="5"/>
             <TextBlock Style="{StaticResource InfoTextBlockStyle}">
             <Run Text="Значение: "/>
-            <Run Text="{Binding ElementName=StepSlider, Path=Value, Mode=OneWay}"/>
+            <Run Text="{Binding ElementName=StepSlider, Path=Value, StringFormat={}{0:F2}, Mode=OneWay}"/>
             </TextBlock>
         </StackPanel>
         <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
