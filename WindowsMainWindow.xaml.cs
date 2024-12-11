@@ -60,14 +60,14 @@ namespace YA_Metro.Windows
             this.Dispatcher.Invoke(() =>
             {
                 this._glControl.Invalidate();
-                if (System.Windows.Forms.MessageBox.Show("Показать отчет?", "Логичный вопрос", MessageBoxButtons.YesNo) != System.Windows.Forms.DialogResult.Yes)
-                    return;
-                new ReportWindow(this._modeling.GetReport()).ShowDialog();
                 this.StartButton.Visibility = Visibility.Visible;
                 this.ResumeButton.Visibility = Visibility.Collapsed;
                 this.SettingsButton.Visibility = Visibility.Visible;
                 this.PauseButton.Visibility = Visibility.Collapsed;
                 this.StopButton.Visibility = Visibility.Collapsed;
+                if (System.Windows.Forms.MessageBox.Show("Показать отчет?", "Логичный вопрос", MessageBoxButtons.YesNo) != System.Windows.Forms.DialogResult.Yes)
+                    return;
+                new ReportWindow(this._modeling.GetReport()).ShowDialog();
             });
         }
 
