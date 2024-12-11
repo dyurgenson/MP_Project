@@ -282,7 +282,7 @@ namespace YA_Metro.AI
         /// <param name="train">Поезд, который нужно инициализировать.</param>
         private void InitializationMovingTrain(Train train)
         {
-            train.Speed = 1.0;
+            train.Speed = 2.5;
             train.State = TrainState.Moving;
             train.CurrentStation = (Station)null;
             train.Angle = this.GetAngle(train);
@@ -428,7 +428,7 @@ namespace YA_Metro.AI
                 }
                 else if (train.State == TrainState.Stopping)
                 {
-                    train.RemainingTimeStop -= (double)this.Settings.Step;
+                    train.RemainingTimeStop = Math.Min(train.RemainingTimeStop - train.Speed * (double)this.Settings.Step, 0);
                     if (train.RemainingTimeStop <= 0.0)
                     {
                         if (train.Direction == train.PreviuosTrain.Direction && (train.Direction == TrainDirection.Direct && train.PreviuosTrain.CurrentStation == train.CurrentSection.To || train.Direction == TrainDirection.Opposite && train.PreviuosTrain.CurrentStation == train.CurrentSection.From || this.IsStationFinal(train.CurrentStation) && train.PreviuosTrain.State != TrainState.Moving && train != train.PreviuosTrain && train.CurrentStation == train.PreviuosTrain.CurrentStation))

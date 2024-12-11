@@ -137,7 +137,7 @@ namespace YA_Metro.Windows
                     return;
                 int stationId = !this.StartStation.IsEnabled ? int.Parse(this.StartStation.Tag.ToString()) : int.Parse(this.FinishStation.Tag.ToString());
                 Station startStation = this._settings.Branch.Stations.Find((Predicate<Station>)(x => x.Id == stationId));
-                this._settings.Trains.Add(new Train(id, 1.0, this._settings.Branch, startStation));
+                this._settings.Trains.Add(new Train(id, 2.5, this._settings.Branch, startStation));
                 this.TrainsList.UnselectAll();
             }
         }
